@@ -112,7 +112,6 @@ Builder.load_string(
 <AKSwipeMenuTopContent>
     size_hint_y: None
     _bg_color: root.bg_color if root.bg_color else root.theme_cls.primary_color
-    radi
 
 
 <AKSwipeMenu>:
