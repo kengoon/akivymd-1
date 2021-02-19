@@ -72,7 +72,7 @@ from kivy.properties import (
 from kivymd.theming import ThemableBehavior
 from kivy.uix.relativelayout import RelativeLayout
 from kivymd.uix.boxlayout import MDBoxLayout
-if platform != "android"
+if platform != "android":
 	if sys.version_info.major == 3 and sys.version_info.minor == 7:
 		from kivymd.uix.behaviors import RectangularElevationBehavior
 	else:
