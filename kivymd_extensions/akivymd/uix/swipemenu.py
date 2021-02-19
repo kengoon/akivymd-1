@@ -70,7 +70,6 @@ from kivy.properties import (
     StringProperty,
 )
 from kivy.uix.relativelayout import RelativeLayout
-from kivymd.theming import ThemableBehavior
 from kivymd.uix.boxlayout import MDBoxLayout
 if sys.version_info.major == 3 and sys.version_info.minor == 7:
     from kivymd.uix.behaviors import RectangularElevationBehavior
@@ -143,7 +142,7 @@ class AdaptiveBox(MDBoxLayout):
     _root = ObjectProperty()
 
 
-class BaseMenu(ThemableBehavior, AdaptiveBox):
+class BaseMenu(AdaptiveBox):
     bg_color = ListProperty()
     _bg_color = ListProperty([0, 0, 0, 0])
     radi = ListProperty([0, 0, 0, 0])
