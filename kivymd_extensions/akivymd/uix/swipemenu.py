@@ -72,10 +72,13 @@ from kivy.properties import (
 from kivymd.theming import ThemableBehavior
 from kivy.uix.relativelayout import RelativeLayout
 from kivymd.uix.boxlayout import MDBoxLayout
-if sys.version_info.major == 3 and sys.version_info.minor == 7:
-    from kivymd.uix.behaviors import RectangularElevationBehavior
+if platform != "android"
+	if sys.version_info.major == 3 and sys.version_info.minor == 7:
+		from kivymd.uix.behaviors import RectangularElevationBehavior
+	else:
+		from kivymd.uix.behaviors import RoundedRectangularElevationBehavior as RectangularElevationBehavior
 else:
-    from kivymd.uix.behaviors import RoundedRectangularElevationBehavior as RectangularElevationBehavior
+	from kivymd.uix.behaviors import RectangularElevationBehavior
 
 __all__ = (
     "AKSwipeMenuMainContent",
