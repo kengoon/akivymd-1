@@ -154,7 +154,8 @@ class AKSwipeMenuMainContent(AdaptiveBox):
 
 
 class AKSwipeMenuTopContent(BaseMenu, RectangularElevationBehavior):
-    pass
+    elevation = NumericProperty(None, allownone=True)
+    
 
 
 class AKSwipeMenuBottomContent(BaseMenu):
