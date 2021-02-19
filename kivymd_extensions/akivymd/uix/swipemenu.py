@@ -143,13 +143,13 @@ class AdaptiveBox(MDBoxLayout):
     _root = ObjectProperty()
 
 
-class BaseMenu(AdaptiveBox):
+class BaseMenu(ThemableBehavior, AdaptiveBox):
     bg_color = ListProperty()
     _bg_color = ListProperty([0, 0, 0, 0])
     radi = ListProperty([0, 0, 0, 0])
 
 
-class AKSwipeMenuMainContent(ThemableBehavior, AdaptiveBox):
+class AKSwipeMenuMainContent(AdaptiveBox):
     _root = ObjectProperty()
 
 
