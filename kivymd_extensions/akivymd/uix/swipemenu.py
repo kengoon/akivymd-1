@@ -69,6 +69,7 @@ from kivy.properties import (
     ObjectProperty,
     StringProperty,
 )
+from kivymd.theming import ThemableBehavior
 from kivy.uix.relativelayout import RelativeLayout
 from kivymd.uix.boxlayout import MDBoxLayout
 if sys.version_info.major == 3 and sys.version_info.minor == 7:
@@ -148,7 +149,7 @@ class BaseMenu(AdaptiveBox):
     radi = ListProperty([0, 0, 0, 0])
 
 
-class AKSwipeMenuMainContent(AdaptiveBox):
+class AKSwipeMenuMainContent(ThemableBehavior, AdaptiveBox):
     _root = ObjectProperty()
 
 
