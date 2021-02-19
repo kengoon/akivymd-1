@@ -59,6 +59,7 @@ Usage
 
 
 import sys
+from kivy import platform
 from kivy.animation import Animation
 from kivy.event import EventDispatcher
 from kivy.lang.builder import Builder
