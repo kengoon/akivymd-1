@@ -58,6 +58,7 @@ Usage
 """
 
 
+import sys
 from kivy.animation import Animation
 from kivy.event import EventDispatcher
 from kivy.lang.builder import Builder
@@ -71,6 +72,10 @@ from kivy.properties import (
 from kivy.uix.relativelayout import RelativeLayout
 from kivymd.theming import ThemableBehavior
 from kivymd.uix.boxlayout import MDBoxLayout
+if sys.version_info.major == 3 and sys.version_info.minor == 7:
+    from kivymd.uix.behaviors import RectangularElevationBehavior
+else:
+    from kivymd.uix.behaviors import RoundedRectangularElevationBehavior as RectangularElevationBehavior
 
 __all__ = (
     "AKSwipeMenuMainContent",
@@ -88,9 +93,10 @@ Builder.load_string(
     canvas.before:
         Color:
             rgba: root._bg_color
-        Rectangle:
+        RoundedRectangle:
             pos: self.pos
             size: self.size
+            radius: root.radi
 
 
 <AKSwipeMenuMainContent>
@@ -106,6 +112,7 @@ Builder.load_string(
 <AKSwipeMenuTopContent>
     size_hint_y: None
     _bg_color: root.bg_color if root.bg_color else root.theme_cls.primary_color
+    radi
 
 
 <AKSwipeMenu>:
@@ -140,13 +147,14 @@ class AdaptiveBox(MDBoxLayout):
 class BaseMenu(ThemableBehavior, AdaptiveBox):
     bg_color = ListProperty()
     _bg_color = ListProperty([0, 0, 0, 0])
+    radi = ListProperty([0, 0, 0, 0])
 
 
 class AKSwipeMenuMainContent(AdaptiveBox):
     _root = ObjectProperty()
 
 
-class AKSwipeMenuTopContent(BaseMenu):
+class AKSwipeMenuTopContent(BaseMenu, RectangularElevationBehavior):
     pass
 
 
